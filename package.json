@@ -1,0 +1,20 @@
+{
+  "name": "mastodon_bot",
+  "version": "0.0.1",
+  "description": "A bot that generates a randomised WikiHow step daily and converts it into Ferb Latin",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot",
+    "mastodon",
+    "quotes"
+  ],
+  "author": "Leyla Hunn",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "mastodon-api": "^1.3.0"
+  }
+}
