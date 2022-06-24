@@ -1,4 +1,4 @@
-//Send POST request 
+//Send POST request and STREAM
 
 require('dotenv').config();
 const Mastodon = require('mastodon-api');
