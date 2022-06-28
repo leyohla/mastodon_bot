@@ -14,10 +14,6 @@ const M = new Mastodon({
     api_url: 'https://botsin.space/api/v1/', // optional, defaults to https://mastodon.social/api/v1/
   })
 
-  //const params = {
-  //      status: "Well, if by that you mean we should create a whole new form of communication, then I couldn't agree more"
-  //}
-
   const options = {
     method: 'GET',
     url: 'https://hargrimm-wikihow-v1.p.rapidapi.com/steps',
@@ -25,27 +21,30 @@ const M = new Mastodon({
     headers: {
       'X-RapidAPI-Key': '5f796e944bmsh091da3c4722237ap189ac3jsna3b994429fae',
       'X-RapidAPI-Host': 'hargrimm-wikihow-v1.p.rapidapi.com',
-      useQueryString: true
+      useQueryString: true,
     },
-    content: "qs"
+    content: {"1": 'count[1]', "2": 'count[2]', "3": 'count[3]'}
   };
 
-  request(options, function (error, response, body) {
+  typeof count === 'string'
+  request(options, function (error, body) {
     if (error) throw new Error(error);
   
     console.log(body);
   });
 
     const params = {
-      status: request.response
+      status: request.body
     }
-    //console.log(options.url);
 
     M.post('statuses', params, (error, params) => {
     if (error) {
         console.log(error);
     }
     else {
+        if (typeof params.content === 'undefined'){
+            return null;
+        }
         console.log(params);
     }
     });
