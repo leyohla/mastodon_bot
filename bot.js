@@ -27,26 +27,29 @@ const M = new Mastodon({
       'X-RapidAPI-Host': 'hargrimm-wikihow-v1.p.rapidapi.com',
       useQueryString: true
     },
-    content: "qs"
+    count: {"1": 'count[0]', "2": 'count[1]', "3": 'count[2]'}
   };
 
   request(options, function (error, response, body) {
     if (error) throw new Error(error);
-  
-    console.log(body);
-  });
+    console.log(JSON.parse(body, undefined, 5));
+    //console.log(JSON.parse(body));
 
+  });
     const params = {
-      status: request.response
+      status: JSON.stringify(request)
     }
-    //console.log(options.url);
+  
 
     M.post('statuses', params, (error, params) => {
     if (error) {
         console.log(error);
     }
     else {
-        console.log(params);
+        if (typeof params.request === 'undefined'){
+            return null;
+        }
+        console.log(request);
     }
     });
 
