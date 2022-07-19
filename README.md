@@ -5,3 +5,5 @@ When run, it posts 3 very useful pieces of sage wisdom for your day-to-day life 
 ![Mastodon post example1](assets/ss3.png)
 
 ![Mastodon post example2](assets/ss4.png)
+
+https://botsin.space/web/@stoicferb
